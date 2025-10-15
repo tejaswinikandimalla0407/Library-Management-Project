@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Book Inventory Management</title>
+  <link rel="stylesheet" href="/CSS/management.css" />
+</head>
+<body>
+  <!-- Access Denied Alert -->
+  <div id="auth-alert" class="auth-alert" style="display: none;">
+    <div class="access-denied-container">
+      <div class="access-denied-icon">🚫</div>
+      <h2>Access Denied</h2>
+      <p>❌ This page is restricted to administrators only.</p>
+      <p>Please login with valid admin credentials to access the Book Inventory Management.</p>
+      <div class="access-denied-actions">
+        <button onclick="window.location.href='/HTML/admin-login.html'" class="btn-primary">🔐 Go to Admin Login</button>
+        <button onclick="window.location.href='/HTML/main.html'" class="btn-secondary">🏠 Return to Home</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Admin Header -->
+  <div id="admin-header" class="admin-header" style="display: none;">
+    <div class="admin-info">
+      <span class="admin-icon">👨‍💼</span>
+      <span id="admin-welcome">Welcome, Admin</span>
+    </div>
+    <button id="logout-btn" class="logout-btn">
+      <span>🚪</span> Logout
+    </button>
+  </div>
+
+  <header id="main-header" style="display: none;">
+    <h1>📚 Edushelf - Admin Panel</h1>
+    <p>Book Inventory Management System</p>
+    <nav class="quick-bar">
+      <a href="/HTML/main.html">🏠 Home</a>     
+      <a href="/HTML/book_search.html">📖 Book Search</a>
+      <a href="/HTML/management.html" class="active">📚 Book Inventory</a>
+      <a href="/HTML/track.html">📈 Track Activity</a>
+    </nav>
+  </header>
+  <center>
+
+  <div class="inventory-container">
+    <h2>📚 Book Inventory Management</h2>
+
+    <form id="bookForm" class="book-form">
+      <h3>Add / Edit Book</h3>
+      <input type="text" id="title" placeholder="Title" required />
+      <input type="text" id="author" placeholder="Author" required />
+      <input type="text" id="genre" placeholder="Genre" required />
+      <input type="number" id="quantity" placeholder="Quantity" min="1" required />
+      
+      <textarea id="summary" placeholder="Summary" rows="4"></textarea>
+      <button type="submit">Save Book</button>
+    </form>
+
+    <div class="book-list" id="bookList"></div>
+  </div>
+
+  </center>
+
+  <footer class="footer">
+  <div class="footer-content">
+    <div class="footer-contact">
+      <p>📞 <strong>Phone:</strong> <a href="tel:+919876543210">+91 98765 43210</a></p>
+      <p>📧 <strong>Email:</strong> <a href="mailto:library@college.edu">library@college.edu</a></p>
+    </div>
+    <div class="footer-social">
+      <a href="https://facebook.com" target="_blank" title="Facebook">🌐</a>
+      <a href="https://twitter.com" target="_blank" title="Twitter">🐦</a>
+      <a href="https://instagram.com" target="_blank" title="Instagram">📸</a>
+    </div>
+    <p class="footer-copy">&copy; 2025 Library Portal. All rights reserved.</p>
+  </div>
+</footer>
+
+  <script src="/JS/management.js"></script>
+
+ 
+</body>
+</html>

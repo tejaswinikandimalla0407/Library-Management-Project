@@ -1,0 +1,162 @@
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(to right, #003366, #0078d4);
+  color: white;
+  padding: 20px;
+}
+
+header {
+  background-color: rgba(0, 0, 0, 0.4);
+  padding: 30px;
+  border-radius: 10px;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+header a {
+  color: white;
+  margin: 0 10px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+header a:hover {
+  text-decoration: underline;
+}
+
+h2, h3 {
+  color: #0e136e;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.return-container {
+  background-color: white;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  max-width: 500px;
+  width: 100%;
+  text-align: center;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+label {
+  text-align: left;
+  font-weight: bold;
+  color: #003366;
+}
+
+input {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  transition: border-color 0.3s ease;
+}
+input:focus {
+  border-color: #0078d4;
+  outline: none;
+}
+
+button {
+  background-color: #0078d4;
+  color: white;
+  padding: 12px;
+  border: none;
+  border-radius: 6px;
+  font-size: 1em;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+button:hover {
+  background-color: #005fa3;
+}
+
+.result-box {
+  margin-top: 20px;
+  font-weight: bold;
+  padding: 15px;
+  border-radius: 6px;
+  display: none;
+}
+
+.result-box.success {
+  display: block;
+  background-color: #d4edda;
+  color: #155724;
+}
+
+.result-box.late {
+  display: block;
+  background-color: #f8d7da;
+  color: #721c24;
+}
+
+.result-box.error {
+  display: block;
+  background-color: #fff3cd;
+  color: #856404;
+}
+
+footer {
+  text-align: center;
+  margin-top: 60px;
+  font-size: 0.9em;
+  color: #ccc;
+}
+.footer {
+  background: linear-gradient(to right, #003366, #0078d4);
+  color: white;
+  padding: 25px 15px;
+  text-align: center;
+  font-size: 0.95em;
+  width: 100%;
+  margin-top: 40px;
+  border-top: 3px solid #005fa3;
+  box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.footer-content {
+  max-width: 900px;
+  margin: auto;
+}
+
+.footer-contact p,
+.footer-copy {
+  margin: 8px 0;
+}
+
+.footer a {
+  color: #a0d2ff;
+  text-decoration: none;
+  margin: 0 8px;
+  font-weight: 500;
+}
+
+.footer a:hover {
+  text-decoration: underline;
+  color: #ffffff;
+}
+
+.footer-social {
+  margin: 12px 0;
+  font-size: 1.4em;
+}
+
+.footer-social a {
+  margin: 0 10px;
+  transition: transform 0.3s ease;
+}
+
+.footer-social a:hover {
+  transform: scale(1.2);
+}
+
+

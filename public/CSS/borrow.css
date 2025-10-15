@@ -1,0 +1,315 @@
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(to right, #003366, #0078d4);
+  color: white;
+  padding: 20px;
+}
+
+header {
+  background-color: rgba(0, 0, 0, 0.4);
+  padding: 30px;
+  border-radius: 10px;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+header a {
+  color: white;
+  margin: 0 10px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+header a:hover {
+  text-decoration: underline;
+}
+
+
+.borrow-container {
+  background-color: white;
+  padding: 50px 40px;
+  border-radius: 12px;
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.25);
+  max-width: 600px;
+  width: 100%;
+  text-align: center;
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+h2 {
+  margin-bottom: 25px;
+  color: #003366;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Floating Label Effect */
+.form-group {
+  position: relative;
+  margin-top: 10px;
+}
+
+input {
+  width: 100%;
+  padding: 14px 10px 14px 10px;
+  font-size: 1em;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  background-color: transparent;
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+
+input:focus {
+  border-color: #0078d4;
+}
+
+
+label {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: white;
+  padding: 0 5px;
+  color: #777;
+  pointer-events: none;
+  transition: all 0.2s ease;
+}
+
+input:focus + label,
+input:not(:placeholder-shown) + label {
+  top: -10px;
+  font-size: 0.85em;
+  color: #005fa3;
+}
+
+#due-date-preview {
+  text-align: left;
+  font-size: 0.95em;
+  color: #0078d4;
+  margin-top: -10px;
+}
+
+button {
+  background-color: #0078d4;
+  color: white;
+  padding: 14px;
+  border: none;
+  border-radius: 8px;
+  font-size: 1em;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+button:hover {
+  background-color: #005fa3;
+  transform: translateY(-2px);
+}
+
+.message {
+  margin-top: 25px;
+  padding: 12px;
+  border-radius: 8px;
+  font-weight: 500;
+}
+
+.message.success {
+  background-color: #d4edda;
+  color: #155724;
+}
+
+.message.error {
+  background-color: #f8d7da;
+  color: #721c24;
+}
+
+.message.info {
+  background-color: #d1ecf1;
+  color: #0c5460;
+}
+
+/* Selected Book Preview */
+.selected-book-info {
+  margin-bottom: 30px;
+  padding: 20px;
+  background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+  border-radius: 12px;
+  border: 2px solid #0078d4;
+  text-align: left;
+}
+
+.selected-book-info h3 {
+  color: #003366;
+  margin: 0 0 15px 0;
+  text-align: center;
+}
+
+.book-preview {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+}
+
+.book-preview-image {
+  flex-shrink: 0;
+}
+
+.book-preview-image img {
+  width: 80px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.book-preview-details {
+  flex-grow: 1;
+}
+
+.book-preview-details h4 {
+  color: #003366;
+  margin: 0 0 8px 0;
+  font-size: 1.1em;
+}
+
+.book-preview-details p {
+  margin: 4px 0;
+  color: #666;
+  font-size: 0.9em;
+}
+
+/* Currently Borrowed Books Section */
+.currently-borrowed-section {
+  margin-top: 30px;
+  padding: 25px;
+  background: #f8f9fa;
+  border-radius: 12px;
+  border-left: 5px solid #0078d4;
+  text-align: left;
+}
+
+.currently-borrowed-section h3 {
+  color: #003366;
+  margin: 0 0 20px 0;
+  text-align: center;
+}
+
+.borrowed-books-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 15px;
+}
+
+.borrowed-book-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  border-left: 4px solid #28a745;
+}
+
+.borrowed-book-item.overdue {
+  border-left-color: #dc3545;
+  background: #fdf2f2;
+}
+
+.borrowed-book-item .book-info h4 {
+  margin: 0 0 4px 0;
+  color: #003366;
+  font-size: 1em;
+}
+
+.borrowed-book-item .book-info p {
+  margin: 2px 0;
+  color: #666;
+  font-size: 0.85em;
+}
+
+.borrowed-book-item .due-date {
+  font-weight: 500;
+  color: #0078d4;
+}
+
+.borrowed-book-item .late-fee {
+  font-weight: 600;
+  color: #dc3545;
+}
+
+.book-status {
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 0.8em;
+  font-weight: bold;
+  white-space: nowrap;
+}
+
+.book-status.current {
+  background: #d4edda;
+  color: #155724;
+}
+
+.book-status.overdue {
+  background: #f8d7da;
+  color: #721c24;
+}
+
+.borrowing-stats {
+  text-align: center;
+  padding: 12px;
+  background: white;
+  border-radius: 8px;
+  font-weight: 600;
+  color: #003366;
+  border: 2px solid #e9ecef;
+}
+
+.no-books {
+  text-align: center;
+  color: #666;
+  font-style: italic;
+  padding: 20px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .borrow-container {
+    padding: 30px 20px;
+    max-width: 95%;
+  }
+  
+  .book-preview {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .borrowed-book-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+  
+  .book-status {
+    align-self: flex-end;
+  }
+}

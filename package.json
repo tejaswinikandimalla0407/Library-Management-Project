@@ -1,0 +1,22 @@
+{
+  "name": "capsule",
+  "version": "1.0.0",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^2.2.0",
+    "express": "^5.1.0",
+    "express-session": "^1.18.2",
+    "fs": "^0.0.1-security",
+    "mongoose": "^8.17.0",
+    "node-fetch": "^3.3.2",
+    "path": "^0.12.7"
+  },
+  "description": ""
+}

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Borrow Book</title>
+  <link rel="stylesheet" href="/CSS/borrow.css" />
+</head>
+<body>
+   <header>
+    <h1>📚 Edushelf - The New Library Management Portal</h1>
+    <p>Your one-stop solution to:</p>
+    <nav class="quick-bar">
+      <a href="/HTML/main.html">Home</a>
+      <a href="/HTML/register.html">📝 Register</a>
+      <a href="/HTML/login.html">🔐 Login</a> 
+      <a href="/HTML/book_search.html">📖 Book Search</a>
+      <a href="/HTML/borrow.html">📥 Borrow Book</a>
+      <a href="/HTML/return.html">📤 Return Book</a>
+      <a href="/HTML/dashboard.html">📊 Dashboard</a>
+      <a href="/HTML/track.html">📈 Track Activity</a>
+    </nav>
+  </header>
+  <center>
+  <div class="borrow-container">
+    <h2>📚 Borrow a Book</h2>
+    
+    <!-- Selected Book Info (if coming from browse) -->
+    <div id="selected-book-info" class="selected-book-info" style="display: none;">
+      <h3>📖 Selected Book</h3>
+      <div class="book-preview">
+        <div class="book-preview-image">
+          <img id="book-preview-cover" src="" alt="Book cover">
+        </div>
+        <div class="book-preview-details">
+          <h4 id="book-preview-title"></h4>
+          <p id="book-preview-author"></p>
+          <p id="book-preview-genre"></p>
+        </div>
+      </div>
+    </div>
+    
+    <form id="borrowForm">
+      <div class="form-group">
+        <input type="text" id="student-id" required />
+        <label for="student-id">Student ID</label>
+      </div>
+
+      <div class="form-group">
+        <input type="text" id="book-title" required />
+        <label for="book-title">Book Title</label>
+      </div>
+
+      <div class="form-group">
+        <input type="text" id="book-author" required />
+        <label for="book-author">Book Author</label>
+      </div>
+
+      <div class="form-group">
+        <input type="date" id="issue-date" required />
+        <label for="issue-date">Issue Date</label>
+      </div>
+
+      <div id="due-date-preview"></div>
+
+      <button type="submit">Borrow</button>
+    </form>
+
+    <!-- Currently Borrowed Books Section -->
+    <div id="currently-borrowed-section" class="currently-borrowed-section" style="display: none;">
+      <h3>📚 Your Currently Borrowed Books</h3>
+      <div id="borrowed-books-list" class="borrowed-books-list">
+        <!-- Borrowed books will be displayed here -->
+      </div>
+      <div class="borrowing-stats">
+        <span id="borrowed-count">0</span>/3 books borrowed
+      </div>
+    </div>
+
+    <div id="message" class="message"></div>
+  </div>
+  </center>
+
+  <script src="/JS/auth-utils.js"></script>
+  <script src="/JS/borrow.js"></script>
+</body>
+</html>

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/> <!-- Responsive design on mobile -->
+  <title>Library Management Portal</title>
+  <link rel="stylesheet" href="/CSS/main.css" />
+  <link rel="stylesheet" href="/CSS/chatbot.css" />
+</head>
+<body>
+  
+  <!-- Website header with title and navigation bar -->
+  <header>
+    <h1>📚 Edushelf - The New Library Management Portal</h1>
+    <p>Your one-stop solution to:</p>
+    <nav class="quick-bar">
+      <a href="/HTML/register.html">📝 Register</a>   <!-- Redirect to Register.html page -->
+      <a href="/HTML/login.html">🔐 Login</a>         <!-- Redirect to Login.html page -->
+       <a href="/HTML/admin-login.html">🔐 Admin Login</a><!-- Redirect to Admin.html page -->
+      <a href="/HTML/book_search.html">📖 Book Search</a> <!-- Redirect to book_search.html page -->
+      <a href="/HTML/borrow.html">📥 Borrow Book</a>    <!-- Redirect to borrow.html page -->
+      <a href="/HTML/return.html">📤 Return Book</a>    <!-- Redirect to return.html page -->
+      <a href="/HTML/dashboard.html">📊 Dashboard</a>   <!-- Redirect to dashboard.html page -->
+      <a href="/HTML/track.html">📈 Track Activity</a>    <!-- Redirect to track.html page -->
+    </nav>
+  </header>
+
+  <!-- Image Gallery Bar -->
+  <div class="gallery">
+    <a href="https://static01.nyt.com/images/2024/07/12/books/review/1221stCentury-Day5/1221stCentury-Day5-facebookJumbo.jpg">
+      <img src="https://static01.nyt.com/images/2024/07/12/books/review/1221stCentury-Day5/1221stCentury-Day5-facebookJumbo.jpg" alt="Books Stack" height="150">
+    </a>
+    <a href="https://assets.meetnewbooks.com/blog/mon.jpeg">
+      <img src="https://assets.meetnewbooks.com/blog/mon.jpeg" alt="Library Table" height="150">
+    </a>
+    <a href="https://static.vecteezy.com/system/resources/thumbnails/045/906/793/small/stack-of-books-on-orange-background-free-photo.jpeg">
+      <img src="https://static.vecteezy.com/system/resources/thumbnails/045/906/793/small/stack-of-books-on-orange-background-free-photo.jpeg" alt="Orange Stack" height="150">
+    </a>
+  </div>
+
+    <!-- Featured books carousel section -->
+  <section class="carousel">
+    <h2>📢 Featured Books</h2>
+    <div class="carousel-container">
+      <a class="carousel-item" href="book.html?title=Atomic%20Habits">"Atomic Habits" by James Clear</a>
+      <a class="carousel-item" href="book.html?title=Sapiens">"Sapiens" by Yuval Noah Harari</a>
+      <a class="carousel-item" href="book.html?title=The%20Alchemist">"The Alchemist" by Paulo Coelho</a>
+      <a class="carousel-item" href="book.html?title=Educated">"Educated" by Tara Westover</a>
+      <a class="carousel-item" href="book.html?title=The%20Power%20of%20Now">"The Power of Now" by Eckhart Tolle</a>
+    </div>
+  </section>
+
+  <!-- Chatbot Launcher -->
+  <div class="chatbot">
+  💬 Need help? <button id="chatToggle">Chat with Assistant</button>
+</div>
+
+<!-- Chatbot Popup UI -->
+<div class="chat-window" id="chatWindow">
+  <div class="chat-header">Library Assistant</div>
+  <div class="chat-messages" id="chatMessages">
+    <div><strong>Bot:</strong> Hello! Ask me something like:</div>
+    <ul>
+      <li>How to return book?</li>
+      <li>Help to find authors</li>
+      <li>Check stock of books</li>
+      <li>Register</li>
+    </ul>
+  </div>
+  <!-- Chat input field and send button -->
+  <div class="chat-input">
+    <input type="text" id="chatInput" placeholder="Ask something..." />
+    <button onclick="handleChat()">Send</button>
+  </div>
+</div> 
+     <!-- footer -->
+
+<footer class="footer">
+  <div class="footer-content">
+    <div class="footer-contact">
+      <p>📞 <strong>Phone:</strong> <a href="tel:+919876543210">+91 98765 43210</a></p>
+      <p>📧 <strong>Email:</strong> <a href="mailto:library@college.edu">library@college.edu</a></p>
+    </div>
+    <div class="footer-social">
+      <a href="https://facebook.com" target="_blank" title="Facebook">🌐</a>
+      <a href="https://twitter.com" target="_blank" title="Twitter">🐦</a>
+      <a href="https://instagram.com" target="_blank" title="Instagram">📸</a>
+    </div>
+    <p class="footer-copy">&copy; 2025 Library Portal. All rights reserved.</p>
+  </div>
+</footer>
+
+<!-- Link your chatbot logic -->
+<script src="/JS/auth-utils.js"></script>
+<script src="/JS/main.js"></script>
+<script src="/JS/chatbot.js"></script>
+</body>
+</html>

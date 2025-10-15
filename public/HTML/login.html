@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Login - Library Portal</title>
+  <link rel="stylesheet" href="/CSS/login.css">
+</head>
+<body>
+
+ <header>
+    <h1>📚 Edushelf - The New Library Management Portal</h1>
+    <p>Your one-stop solution to:</p>
+    <nav class="quick-bar">
+     
+       <a href="/HTML/main.html">Home</a>     
+      <a href="/HTML/book_search.html">📖 Book Search</a>
+      <a href="/HTML/borrow.html">📥 Borrow Book</a>
+      <a href="/HTML/return.html">📤 Return Book</a>
+      <a href="/HTML/dashboard.html">📊 Dashboard</a>
+      <a href="/HTML/track.html">📈 Track Activity</a>
+    </nav>
+  </header>
+
+  <center>
+
+  <div class="container">
+    <h2>Student Login</h2>
+    <form id="login-form">
+      <label for="studentId">Student ID <span style="color:red">*</span></label>
+      <input type="text" id="studentId" name="studentId" required>
+
+      <label for="password">Password <span style="color:red">*</span></label>
+      <input type="password" id="password" name="password" required>
+
+      <button type="submit">Login</button>
+      <a href="#">Forgot Password?</a>
+    </form>
+  </div>
+
+  <!-- Custom Popup Modal -->
+  <div id="popup-modal" class="modal">
+    <div class="modal-content">
+      <p id="popup-message"></p>
+    </div>
+  </div>
+
+  </center>
+
+  <!-- footer -->
+
+<footer class="footer">
+  <div class="footer-content">
+    <div class="footer-contact">
+      <p>📞 <strong>Phone:</strong> <a href="tel:+919876543210">+91 98765 43210</a></p>
+      <p>📧 <strong>Email:</strong> <a href="mailto:library@college.edu">library@college.edu</a></p>
+    </div>
+    <div class="footer-social">
+      <a href="https://facebook.com" target="_blank" title="Facebook">🌐</a>
+      <a href="https://twitter.com" target="_blank" title="Twitter">🐦</a>
+      <a href="https://instagram.com" target="_blank" title="Instagram">📸</a>
+    </div>
+    <p class="footer-copy">&copy; 2025 Library Portal. All rights reserved.</p>
+  </div>
+</footer>
+
+  <script src="/JS/login.js"></script>
+</body>
+</html>

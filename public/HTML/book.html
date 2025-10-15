@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Book Details - Library Portal</title>
+  <link rel="stylesheet" href="/CSS/book.css" />
+</head>
+<body>
+  <header>
+    <h1>📚 Edushelf - The New Library Management Portal</h1>
+    <p>Your one-stop solution to:</p>
+    <nav class="quick-bar">
+      <a href="/HTML/main.html">Home</a>     
+      <a href="/HTML/book_search.html">📖 Book Search</a>
+      <a href="/HTML/borrow.html">📥 Borrow Book</a>
+      <a href="/HTML/return.html">📤 Return Book</a>
+      <a href="/HTML/dashboard.html">📊 Dashboard</a>
+      <a href="/HTML/track.html">📈 Track Activity</a>
+    </nav>
+  </header>
+
+  <div class="book-details-container">
+    <!-- Loading State -->
+    <div id="loading" class="loading">
+      <div class="loading-spinner"></div>
+      <p>Loading book details...</p>
+    </div>
+
+    <!-- Error State -->
+    <div id="error-state" class="error-state" style="display: none;">
+      <div class="error-icon">📚</div>
+      <h2>Book Not Found</h2>
+      <p>Sorry, we couldn't find the book you're looking for.</p>
+      <button onclick="window.history.back()" class="back-btn">← Go Back</button>
+    </div>
+
+    <!-- Book Details Content -->
+    <div id="book-content" class="book-content" style="display: none;">
+      <!-- Book Header -->
+      <div class="book-header">
+        <div class="book-cover-section">
+          <img id="book-cover" src="" alt="Book cover" class="book-cover">
+          <div class="availability-badge" id="availability-badge">
+            <span id="availability-text">Available</span>
+          </div>
+        </div>
+        
+        <div class="book-info-section">
+          <h1 id="book-title" class="book-title">Book Title</h1>
+          <p id="book-author" class="book-author">by Author Name</p>
+          <div class="book-meta">
+            <span id="book-genre" class="genre-tag">Genre</span>
+            <span id="book-year" class="year-tag">Year</span>
+            <span id="book-pages" class="pages-tag">Pages</span>
+          </div>
+          <div class="book-rating" id="book-rating">
+            <!-- Stars will be generated here -->
+          </div>
+          <div class="book-actions">
+            <button id="borrow-btn" class="borrow-btn" onclick="borrowThisBook()">
+              📥 Borrow Book
+            </button>
+            <button id="reserve-btn" class="reserve-btn" onclick="reserveThisBook()" style="display: none;">
+              ⏰ Reserve Book
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Book Details Tabs -->
+      <div class="book-tabs">
+        <button class="tab-btn active" onclick="switchTab('summary')">📖 Summary</button>
+        <button class="tab-btn" onclick="switchTab('details')">ℹ️ Details</button>
+        <button class="tab-btn" onclick="switchTab('availability')">📊 Availability</button>
+      </div>
+
+      <!-- Tab Content -->
+      <div class="tab-content">
+        <!-- Summary Tab -->
+        <div id="summary-tab" class="tab-pane active">
+          <h3>📖 Book Summary</h3>
+          <p id="book-summary" class="book-summary">
+            Book summary will be displayed here...
+          </p>
+          <div id="book-description" class="book-description">
+            <h4>Description</h4>
+            <p id="description-text">Detailed description will be shown here...</p>
+          </div>
+        </div>
+
+        <!-- Details Tab -->
+        <div id="details-tab" class="tab-pane">
+          <h3>ℹ️ Book Information</h3>
+          <div class="details-grid">
+            <div class="detail-item">
+              <strong>📚 Title:</strong>
+              <span id="detail-title">-</span>
+            </div>
+            <div class="detail-item">
+              <strong>✍️ Author:</strong>
+              <span id="detail-author">-</span>
+            </div>
+            <div class="detail-item">
+              <strong>🏷️ Genre:</strong>
+              <span id="detail-genre">-</span>
+            </div>
+            <div class="detail-item">
+              <strong>📅 Publication Year:</strong>
+              <span id="detail-year">-</span>
+            </div>
+            <div class="detail-item">
+              <strong>📄 Pages:</strong>
+              <span id="detail-pages">-</span>
+            </div>
+            <div class="detail-item">
+              <strong>🏢 Publisher:</strong>
+              <span id="detail-publisher">-</span>
+            </div>
+            <div class="detail-item">
+              <strong>📑 ISBN:</strong>
+              <span id="detail-isbn">-</span>
+            </div>
+            <div class="detail-item">
+              <strong>🌐 Language:</strong>
+              <span id="detail-language">-</span>
+            </div>
+            <div class="detail-item">
+              <strong>📖 Format:</strong>
+              <span id="detail-format">-</span>
+            </div>
+            <div class="detail-item">
+              <strong>⭐ Rating:</strong>
+              <span id="detail-rating">-</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Availability Tab -->
+        <div id="availability-tab" class="tab-pane">
+          <h3>📊 Availability Information</h3>
+          <div class="availability-grid">
+            <div class="availability-item">
+              <div class="availability-number" id="total-copies">0</div>
+              <div class="availability-label">Total Copies</div>
+            </div>
+            <div class="availability-item">
+              <div class="availability-number" id="available-copies">0</div>
+              <div class="availability-label">Available</div>
+            </div>
+            <div class="availability-item">
+              <div class="availability-number" id="borrowed-copies">0</div>
+              <div class="availability-label">Borrowed</div>
+            </div>
+          </div>
+          <div class="location-info">
+            <h4>📍 Library Location</h4>
+            <p id="book-location">Location information will be displayed here</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Back Button -->
+      <div class="back-section">
+        <button onclick="window.history.back()" class="back-btn">← Back to Browse Books</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="/JS/auth-utils.js"></script>
+  <script src="/JS/book.js"></script>
+</body>
+</html>

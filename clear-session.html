@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Clear Admin Session</title>
+</head>
+<body>
+    <h2>Admin Session Clearer</h2>
+    <p>Click the button below to clear any existing admin sessions:</p>
+    <button onclick="clearSession()">Clear Session</button>
+    <p id="status"></p>
+
+    <script>
+        function clearSession() {
+            localStorage.removeItem("isAdmin");
+            localStorage.removeItem("adminUsername");
+            localStorage.removeItem("adminRole");
+            localStorage.removeItem("loginTimestamp");
+            
+            document.getElementById("status").innerHTML = "✅ Admin session cleared! You can now test the login flow.";
+            document.getElementById("status").style.color = "green";
+            
+            setTimeout(() => {
+                window.location.href = "/HTML/main.html";
+            }, 2000);
+        }
+    </script>
+</body>
+</html>

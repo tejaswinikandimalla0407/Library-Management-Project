@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Admin Login - Library Portal</title>
+  <link rel="stylesheet" href="/CSS/admin.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- Background Elements -->
+  <div class="background">
+    <div class="bg-shape shape-1"></div>
+    <div class="bg-shape shape-2"></div>
+    <div class="bg-shape shape-3"></div>
+  </div>
+
+  <!-- Navigation Back to Home -->
+  <nav class="top-nav">
+    <a href="/HTML/main.html" class="back-home">
+      <span class="arrow">←</span> Back to Home
+    </a>
+  </nav>
+
+  <!-- Main Admin Login Container -->
+  <div class="admin-container">
+    <div class="login-header">
+      <div class="admin-icon">🔐</div>
+      <h1>Admin Portal</h1>
+      <p class="subtitle">Secure access to library management</p>
+    </div>
+
+    <form id="admin-login-form" class="login-form">
+      <div class="input-group">
+        <label for="admin-username">👤 Username</label>
+        <input type="text" id="admin-username" name="username" placeholder="Enter admin username" required autocomplete="username" />
+      </div>
+
+      <div class="input-group">
+        <label for="admin-password">🔑 Password</label>
+        <input type="password" id="admin-password" name="password" placeholder="Enter admin password" required autocomplete="current-password" />
+      </div>
+
+      <button type="submit" class="login-btn">
+        <span class="btn-text">Access Admin Panel</span>
+        <span class="btn-icon">→</span>
+      </button>
+    </form>
+
+    <div class="admin-info">
+      <p>🛡️ This is a secure admin area</p>
+      <p class="help-text">Need help? Contact system administrator</p>
+    </div>
+  </div>
+
+  <!-- Custom Modal for Error Messages -->
+  <div id="error-modal" class="modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <span class="error-icon">❌</span>
+        <h3>Authentication Failed</h3>
+      </div>
+      <div class="modal-body">
+        <p id="error-message">Invalid credentials or unauthorized user.</p>
+      </div>
+      <div class="modal-footer">
+        <button id="close-modal" class="close-btn">Try Again</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Success Modal -->
+  <div id="success-modal" class="modal">
+    <div class="modal-content success">
+      <div class="modal-header">
+        <span class="success-icon">✅</span>
+        <h3>Welcome Admin!</h3>
+      </div>
+      <div class="modal-body">
+        <p>Authentication successful. Redirecting to management panel...</p>
+      </div>
+    </div>
+  </div>
+
+  <footer class="admin-footer">
+    <p>© 2025 EduShelf Library Portal - Admin Access</p>
+  </footer>
+
+  <script src="/JS/admin-login.js"></script>
+</body>
+</html>
