@@ -1,22 +1,22 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: Library-app
+  name: library-app
 spec:
   replicas: 2
   selector:
    matchLabels:
-     app: Library-app
+     app: library-app
   template:
    metadata:
      labels:
-       app: Library-app
+       app: library-app
      annotations:
-       ad.datadoghq.com/Library-app.logs: '[{"source":"nodejs","service":"Library-service"},{"source":"nodejs","service":"Library-app"}]'
+       ad.datadoghq.com/library-app.logs: '[{"source":"nodejs","service":"library-service"},{"source":"nodejs","service":"library-app"}]'
    spec:
      containers:
-     - name: Library-app
-       image: swargamsai/library-app-doc-img:latest
+     - name: library-app
+       image: tejaswinikandimalla/library-app:latest
        ports:
        - containerPort: 3000
        env:
@@ -45,12 +45,12 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: Library-service
+  name: library-service
 spec:
   selector:
-   app: Library-app
+   app: library-app
   ports:
   - port: 8070
-   targetPort: 3000
+    targetPort: 3000
   type: LoadBalancer
  
